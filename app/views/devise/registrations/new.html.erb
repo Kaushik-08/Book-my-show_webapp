@@ -1,0 +1,49 @@
+
+    <%= image_tag('Signup-img.png',alt: "",class:"img-fluid", id:"signup-img") %>
+
+<div class="registration">
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+   <b> <%= f.label :email %><br /></b>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",id:"form-field" %>
+  </div>
+
+  <div class="field">
+     <b> <%= f.label :firstname %><br /></b>
+     <%= f.text_field :firstname ,id:"form-field"%>
+  </div>
+  <div class="field">
+     <b> <%= f.label :lastname %><br /></b>
+     <%= f.text_field :lastname ,id:"form-field"%>
+  </div>
+  <div class="field">
+     <b> <%= f.label :phonenumber %><br /></b>
+     <%= f.text_field :phonenumber ,id:"form-field"%>
+  </div>
+
+  <div class="field">
+   <b>  <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br /></b>
+    <%= f.password_field :password, autocomplete: "new-password" ,id:"form-field"%>
+  </div>
+
+  <div class="field">
+    <b> <%= f.label :password_confirmation %><br /></b>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" ,id:"form-field"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" ,id:"btn-sgnup"%>
+  </div>
+
+<% end %>
+
+<div id="btn-login">
+<b><p>Already Have An Account ? <%= render "devise/shared/links" %></p> </b>
+</div>
+  </div>

@@ -1,0 +1,18 @@
+
+<%= image_tag('home-frst-img.png',alt: "",class:"img-fluid", id:"home-img") %>
+
+<div>
+    <div id="home-text"><p id="text-clr">Book Your Tickets</p> 
+    <p>And Enjoy With Your Friends And Family !</p>
+    </div>
+     <% if @presence == 1%>
+    <button type="button" class="btn btn-danger" id="btn-home"><%= link_to 'Explore', movies_path %></button>
+    <% else %>
+    <a href="/users/sign_in"><button type="button" class="btn btn-danger" id="btn-home">Login</button></a>
+    <% end %>
+
+
+</div>
+
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webapp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <nav class="navbar navbar-expand-lg navbar-light " style="">
+  <a class="navbar-brand" href="/" ><%= image_tag('logo-img.png',alt: "",id:"logo-icn") %></a>
+
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="/movies">Movies</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/movies/1/theaters">Theaters</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/booking/new">Book Ticket</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/bookings/index" tabindex="-1" aria-disabled="true">Ticketes</a>
+  </li>
+</ul>
+
+ <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search Movies" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search </button>
+      </form>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+    
+        <% if user_signed_in? %>
+            <li class="nav-item">
+                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+        <% else %>
+            <li class="nav-item">
+                <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Register', new_user_registration_path, class: 'nav-link' %>
+            </li>
+        <% end %>
+    </ul>
+    
+  </div>
+</nav>
+  </head>
+
+  <body>
+    <p class="notice" id="notice-message"><%= notice %></p>
+    <p class="alert" id="error-message"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>

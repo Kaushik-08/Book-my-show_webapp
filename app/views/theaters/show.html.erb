@@ -1,0 +1,21 @@
+
+<%= image_tag('Theater.png',alt: "",class:"rounded mx-auto d-block") %>
+
+
+<p id="notice"><%= notice %></p>
+
+<% @theaters.each do |theater| %>
+<div class="card">
+  <h5 class="card-header">Theater name:</h5>
+  <div class="card-body">
+    <h4 class="card-title"><%= theater.theater_name %></h4>
+    <p class="card-title">Theater location:</p>
+    <p class="card-text"><%= theater.theater_location %></p>
+    
+    <a href="/booking/new"><button type="button" class="btn btn-outline-dark">Book</button></a>
+
+  </div>
+<% end %>
+
+
+

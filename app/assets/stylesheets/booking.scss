@@ -1,0 +1,284 @@
+/* 
+body {
+    background-color: #dadde6;
+    font-family: arial
+}
+
+.fl-left {
+    float: left
+}
+
+.fl-right {
+    float: right
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    border-left: 10px solid #fec500;
+    padding-left: 10px;
+    margin-bottom: 30px
+}
+
+.card {
+    display: table-row;
+    width: 50%;
+    background-color: #fff;
+    color: #989898;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    border-radius: 4px;
+    position: relative
+}
+
+.date {
+    display: table-cell;
+    width: 25%;
+    position: relative;
+    text-align: center;
+    border-right: 2px dashed #dadde6
+}
+
+.date:before,
+.date:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #DADDE6;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 1;
+    border-radius: 50%
+}
+
+.date:after {
+    top: auto;
+    bottom: -15px
+}
+
+.date time {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.date time span {
+    display: block
+}
+
+.date time span:first-child {
+    color: #2b2b2b;
+    font-weight: 600;
+    font-size: 250%
+}
+
+.date time span:last-child {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: -10px
+}
+
+.card-cont {
+    display: table-cell;
+    width: 75%;
+    font-size: 85%;
+    padding: 10px 10px 30px 50px
+}
+
+.card-cont h3 {
+    color: #3C3C3C;
+    font-size: 130%
+}
+
+.card-cont .even-date i,
+.card-cont .even-info i,
+.card-cont .even-date time,
+.card-cont .even-info p {
+    display: table-cell
+}
+
+.card-cont .even-info p {
+    padding: 30px 50px 0 0
+}
+
+.card-cont .even-date time span {
+    display: block
+}
+
+.card-cont a {
+    display: block;
+    text-decoration: none;
+    width: 80px;
+    height: 30px;
+    background-color: #D8DDE0;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px
+}
+ */
+
+
+
+.container {
+	display: contents;
+	flex-wrap: wrap;
+	max-width: 100%;
+	max-height: 100%;
+	margin-left: auto;
+}
+
+.movie-card {
+	background: #ffffff;
+	box-shadow: 0px 6px 18px rgba(0,0,0,.1);
+	width: 100%;
+	max-width: 315px;
+	margin: 2em;
+	border-radius: 10px;
+	display:inline-block;
+	margin-left: 10%;
+}
+
+.movie-header {
+	padding:0;
+	margin: 0;
+	height: 367px;
+	width: 100%;
+	display: block;
+	border-top-left-radius: 10px;
+	border-top-right-radius:10px;
+}
+
+.manOfSteel {
+	background-size: cover;
+}
+
+.babyDriver {
+	background-size: cover;
+}
+
+.theDarkTower {
+	background-size: cover;
+	background-position: 100% 100%;
+}
+
+.bladeRunner2049 {
+	background-size: cover;
+	background-position: 100% 80%;
+}
+
+.header-icon-container {
+	position: relative;
+}
+
+.header-icon {
+	width: 100%;
+	height: 367px;
+	line-height: 367px;
+	text-align:center;
+	vertical-align:middle;
+	margin: 0 auto;
+	color: #ffffff;
+	font-size: 54px;
+	text-shadow:0px 0px 20px #6abcea, 0px 5px 20px #6ABCEA;
+	opacity: .85;
+}
+
+.header-icon:hover {
+	background:rgba(0,0,0,.15);
+	font-size: 74px;
+	text-shadow:0px 0px 20px #6abcea, 0px 5px 30px #6ABCEA;
+	border-top-left-radius: 10px;
+	border-top-right-radius:10px;
+	opacity: 1;
+}
+
+.movie-card:hover {
+	transform:scale(1.03);
+	box-shadow: 0px 10px 25px rgba(0,0,0,.08);
+}
+
+.movie-content {
+	padding: 18px 18px 24px 18px;
+	margin: 0;
+}
+
+.movie-content-header, .movie-info {
+	display: table;
+	width: 100%;
+}
+
+.movie-title {
+	font-size: 20px;
+	margin: 0;
+	display: table-cell;
+}
+
+.imax-logo {
+	width: 50px;
+	height: 15px;
+	background-size: contain;
+	display:table-cell;
+	float: right;
+	position:relative;
+	margin-top: 5px;
+}
+
+.movie-info {
+	margin-top: 1em;
+}
+
+.info-section {
+	display: table-cell;
+	text-transform: uppercase;
+	text-align:center;
+}
+
+.info-section:first-of-type {
+	text-align:left;
+}
+
+.info-section:last-of-type {
+	text-align:right;
+}
+
+.info-section label {
+	display: block;
+	color: rgba(0,0,0,.5);
+	margin-bottom: .5em;
+	font-size: 9px;
+}
+
+.info-section span {
+	font-weight: 700;
+	font-size: 11px;
+}
+
+#tickets-img{
+    width: inherit;
+    height: inherit;
+}
+
+@media screen and (max-width: 500px) {
+	.movie-card {
+		width: 95%;
+		max-width: 95%;
+		margin: 1em;
+		display: block;
+	}
+	
+	.container {
+		padding: 0;
+		margin: 0;
+	}
+}

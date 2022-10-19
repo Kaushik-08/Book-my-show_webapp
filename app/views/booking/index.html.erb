@@ -1,0 +1,42 @@
+<% @user_bookings.each do|booking|%>	
+   <div class="container">
+            
+            <div class="movie-card">
+              <div class="movie-header babyDriver">
+			  <%= image_tag Movie.find(booking.movie_id).header_image ,id:"tickets-img"%>				
+              </div><!--movie-header-->
+              <div class="movie-content">
+                <div class="movie-content-header">
+                  <a href="#">
+                    <h3 class="movie-title"><%= Movie.find(booking.movie_id).movie_name %></h3>   
+
+                  </a>
+                  <div class="imax-logo"></div>
+                </div>
+                <div class="movie-info">
+                  <div class="info-section">
+                    <label>Theater Name</label>
+                    <span><%= Theater.find(booking.theater_id).theater_name %></span>
+                  </div><!--date,time-->
+                  <div class="info-section">
+                    <label>Show Timing</label>
+                    <span><%= ShowTiming.find(booking.show_timing_id).show_timing %></span>
+                  </div><!--screen-->
+                  <div class="info-section">
+                    <label>quantity</label>
+                    <span>
+					 <%=booking.quantity%>
+					</span>
+                  </div><!--row-->
+                  <div class="info-section">
+                    <label>Row</label>
+                    <span>N/A</span>
+                  </div><!--seat-->
+                </div>
+              </div><!--movie-content-->
+            </div><!--movie-card-->
+            
+          
+          </div><!--container-->
+		  
+		  <% end %>

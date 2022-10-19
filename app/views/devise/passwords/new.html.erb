@@ -1,0 +1,23 @@
+<%= image_tag('frgt-pswrd-img.png',alt: "",id:"frgt-pswrd-img") %>
+<div class="forgt-pswrd">
+<h2 id="frgt-pswrd">Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+   <b> <%= f.label :email %><br /></b>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,id:"form-field-frgt-pswrd"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions"  ,id:"reste-pswrd"%>
+  </div>
+<% end %>
+
+<div id="log-sgn-btn">
+<b><%= render "devise/shared/links" %></b>
+</div>
+</div>
+
+
