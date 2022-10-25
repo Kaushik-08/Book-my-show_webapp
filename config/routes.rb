@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
   get 'booking/new'
-  get 'booking/new/:movie_id', to: 'booking#sorttheater'
+  get "booking/new/:movie_id", to: "booking#sorttheater"
+  get 'booking/new/:movie_id/:theater_id', to: 'booking#view_theater'
   get 'shows/new'
   match '/create', to: 'shows#create', via: :post
   match '/show_timing', to: 'shows#show_timing', via: :post
   match '/book', to: 'booking#book', via: :post
   get '/bookings/index', to: "booking#index"
+  get '/booking/:movie_id', to: 'booking#theater'
   resources :theaters
   get'/movies/:id/theaters', to: 'theaters#show'
   resources :movies
   devise_for :users
   get 'home/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "home#index"
 
   resources :movies do

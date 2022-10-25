@@ -12,8 +12,8 @@
     <p class="card-title">Theater location:</p>
     <p class="card-text"><%= theater.theater_location %></p>
     
-    <a href="/booking/new"><button type="button" class="btn btn-outline-dark">Book</button></a>
-
+    <button type="button" class="btn btn-outline-dark"> <%= link_to "Book", "/booking/new/#{params[:id]}/#{theater.id}"%> </button> 
+<%# <a href="/booking/new"><button type="button" class="btn btn-outline-dark">Book</button></a> %>
   </div>
 <% end %>
 

@@ -23,9 +23,19 @@ class BookingController < ApplicationController
   end  
 
   def sorttheater
-    @@movie_id = params[:movie_id]
-    @@theaters = Theater.joins("inner join shows on theaters.id = shows.theater_id and movie_id = #{params[:movie_id]}")
-    redirect_to "/booking/new"
+    @theaters = Theater.joins("inner join shows on theaters.id = shows.theater_id and movie_id = #{params[:movie_id]}")
+    render "booking/new"
+  end
+
+  def view_theater
+    @@theater_id= params[:theater_id]
+    redirect_to "/booking/#{params[:movie_id]}"
+  end
+
+  def theater
+    @theater_id = @@theater_id
+    @theaters = Theater.where(id: @theater_id)
+    render "booking/new"
   end
 
   

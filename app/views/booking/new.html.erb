@@ -7,15 +7,16 @@
        <input name="authenticity_token" type="hidden" value=" <%= form_authenticity_token %>">
    <select class="form-control" onchange="settheater(event)" name="allot_movie_id"  id="exampleFormControlSelect1">
     <option value= 0 > select-option</option>
+    <% movie_id = params[:movie_id] %>
     <%Movie.all.each do|allot|%>
-      <option value= <%=allot.id %> <%= @movie_id == allot.id.to_s ? " selected " : "" %> ><%=allot.movie_name%></option>
+      <option value= <%=allot.id %> <%= movie_id == allot.id.to_s ? " selected " : "" %> ><%=allot.movie_name%></option>
     <%end%> 
     </select>
      </div>
   <div class="col">
 <select class="form-control" name="allot_theater_id" id="exampleFormControlSelect1">
    <%@theaters.each do|screen|%>
-      <option value= <%=screen.id %>><%=screen.theater_name%></option>
+      <option value=<%=screen.id %>  <%= @theater_id == screen.id.to_s ? " selected " : "" %>  ><%=screen.theater_name%></option>
     <%end%>
     </select>
       </div>
@@ -25,7 +26,7 @@
        
 
 <label for="birthday">Choose date:</label>
-<input type="date" name="booking_date" min="2022-10-06" max="2022-10-25">
+<input type="date" name="booking_date" min="2022-10-25" max="2022-11-30">
 
              <input type="number" name="seats" class="todo_input" placeholder="Enter Task" min="1" max="120">
       
