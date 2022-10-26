@@ -1,4 +1,7 @@
 class BookingController < ApplicationController
+
+  before_action :ensure_logged_in
+
   @@theaters= Theater.all 
   @@movie_id=0
   def new 
@@ -6,8 +9,8 @@ class BookingController < ApplicationController
    @movie_id = @@movie_id
   end
   def index
-    @user = current_user
-    @user_bookings = @user.bookings
+    @user_bookings = Booking.where(user_id: current_user.id).paginate(page: params[:page], per_page: 3)   
+    # @user_bookings = Booking.paginate(page: params[:page])    
   end
 
   def book

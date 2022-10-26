@@ -9,6 +9,10 @@ gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 
 gem 'devise'
 
+gem 'will_paginate', '~> 3.1'
+
+
+gem 'will_paginate-bootstrap' 
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.5'

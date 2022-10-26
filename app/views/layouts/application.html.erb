@@ -21,12 +21,14 @@
   <li class="nav-item">
     <a class="nav-link" href="/theaters">Theaters</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/booking/new">Book Ticket</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/bookings/index" tabindex="-1" aria-disabled="true">Ticketes</a>
-  </li>
+  <% if current_user %>
+      <li class="nav-item">
+        <a class="nav-link" href="/booking/new">Book Ticket</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/bookings/index" tabindex="-1" aria-disabled="true">Ticketes</a>
+      </li>
+  <% end%>
 </ul>
 
  <form class="d-flex">

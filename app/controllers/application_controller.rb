@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
 
               devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:firstname, :lastname, :email, :phonenumber, :password, :current_password)}
          end
+
+         def ensure_logged_in
+               redirect_to "/users/sign_in" unless current_user
+         end   
 end
