@@ -4,15 +4,15 @@
 
 <p id="notice"><%= notice %></p>
 
-<% @theaters.each do |theater| %>
+<% @movies.shows.all.each do |show| %>
 <div class="card">
   <h5 class="card-header">Theater name:</h5>
   <div class="card-body">
-    <h4 class="card-title"><%= theater.theater_name %></h4>
+    <h4 class="card-title"><%= show.theater.theater_name %></h4>
     <p class="card-title">Theater location:</p>
-    <p class="card-text"><%= theater.theater_location %></p>
+    <p class="card-text"><%= show.theater.theater_location %></p>
     
-    <button type="button" class="btn btn-outline-dark"> <%= link_to "Book", "/booking/new/#{params[:id]}/#{theater.id}"%> </button> 
+    <button type="button" class="btn btn-outline-dark"> <%= link_to "Book", "/booking/new/#{params[:id]}/#{show.id}"%> </button> 
 <%# <a href="/booking/new"><button type="button" class="btn btn-outline-dark">Book</button></a> %>
   </div>
 <% end %>

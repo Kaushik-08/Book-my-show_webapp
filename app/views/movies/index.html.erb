@@ -5,7 +5,7 @@
   <div class="all-movie">
     <% @movies.each do |movie| %>
     
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 18rem; margin-left: 5px; margin-top: 1%;" >
       <% if movie.header_image.attached?%>
       <%= image_tag movie.header_image,id:"movie-list"%>
       <% end %>
@@ -14,11 +14,13 @@
     <p class="card-text"><%= movie.movie_format %></p>
     <p class="card-text"><%= movie.movie_duration %></p>
     <p class="card-text"><%= movie.movie_language %></p>
+    <p class="card-text"><%= movie.ticket_price %></p>
     <button type="button" class="btn btn-outline-dark"><%= link_to 'show', movie %></button>
 
   </div>
 </div>
-l    <% end %>
+
+   <% end %>
 
 <br>
 

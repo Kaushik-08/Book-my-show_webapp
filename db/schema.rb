@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_07_091405) do
+ActiveRecord::Schema.define(version: 2022_11_15_075617) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -59,10 +59,11 @@ ActiveRecord::Schema.define(version: 2022_10_07_091405) do
     t.string "movie_name"
     t.text "about_movie"
     t.string "movie_format"
-    t.integer "movie_duration"
+    t.string "movie_duration"
     t.string "movie_language"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "ticket_price"
   end
 
   create_table "show_timings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

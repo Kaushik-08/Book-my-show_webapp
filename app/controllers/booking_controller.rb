@@ -26,6 +26,7 @@ class BookingController < ApplicationController
   end  
 
   def sorttheater
+    # @movies = Movie.find(params[:id])
     @theaters = Theater.joins("inner join shows on theaters.id = shows.theater_id and movie_id = #{params[:movie_id]}")
     render "booking/new"
   end
