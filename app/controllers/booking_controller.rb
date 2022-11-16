@@ -4,20 +4,26 @@ class BookingController < ApplicationController
 
   @@theaters= Theater.all 
   @@movie_id=0
+  
   def new 
    @theaters = @@theaters
    @movie_id = @@movie_id
   end
+
   def index
     @user_bookings = Booking.where(user_id: current_user.id).paginate(page: params[:page], per_page: 3)   
     # @user_bookings = Booking.paginate(page: params[:page])    
   end
 
   def book
-    
+    # booking_seats= Booking.where(movie_id: params[:allot_movie_id], theater_id: params[:allot_theater_id]).length
+    # if (booking_seats+params[:seats].to_i)<120
+    #   request.referrer
+    #   return
+    # end 
     screen = Booking.create!(
   quantity: params[:seats], date_of_booking: params[:booking_date], movie_id: params[:allot_movie_id], theater_id: params[:allot_theater_id], show_timing_id: params[:allot_show_timing_id], user_id: current_user.id
-  )
+)
   if screen.save!
   redirect_to "/bookings/index"
   else
@@ -26,7 +32,7 @@ class BookingController < ApplicationController
   end  
 
   def sorttheater
-    # @movies = Movie.find(params[:id])
+    # @movies = Theater.find(params[:movie_id])
     @theaters = Theater.joins("inner join shows on theaters.id = shows.theater_id and movie_id = #{params[:movie_id]}")
     render "booking/new"
   end
@@ -41,9 +47,6 @@ class BookingController < ApplicationController
     @theaters = Theater.where(id: @theater_id)
     render "booking/new"
   end
-
-  
-
 
   # def seat_quantity
   # screen = Booking.create!(

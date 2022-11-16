@@ -29,16 +29,15 @@
                                 <span>
                       <%=booking.quantity%>
                       </span>
+
                               </div><!--row-->
                               <div class="info-section">
-                                <label>Row</label>
-                                <span>N/A</span>
+                                <label>Price</label>                                
+                                <span> <%=Movie.find(booking.movie_id).ticket_price.to_i * booking.quantity%> </span>
                               </div><!--seat-->
                             </div>
                           </div><!--movie-content-->
                         </div><!--movie-card-->
-                        
-                      
                       </div><!--container-->
             <% end %>
               <div class="paginate_tickets">

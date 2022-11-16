@@ -9,7 +9,11 @@ class TheatersController < ApplicationController
   # GET /theaters/1 or /theaters/1.json
   def show
     # @theaters = Theater.joins("inner join shows on theaters.id = shows.theater_id and movie_id = #{params[:id]}")
-    @movies = Movie.find(params[:id])
+    @theaters = []
+    Movie.find(params[:id]).shows.all.each do |show|
+      @theaters.push(show.theater)
+    end
+    @theaters
   end
 
   # GET /theaters/new
