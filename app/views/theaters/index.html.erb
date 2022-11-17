@@ -12,7 +12,7 @@
     <h4 class="card-title"><%= theater.theater_name %></h4>
     <p class="card-title">Theater location:</p>
     <p class="card-text"><%= theater.theater_location %></p>
-    <button type="button" class="btn btn-outline-dark"><%= link_to 'Book', "/booking/new" %></button>
+    <button type="button" class="btn btn-outline-dark"><%= link_to 'Book', "/booking/new/0/#{theater.id}" %></button>
 
   </div>
 </div>

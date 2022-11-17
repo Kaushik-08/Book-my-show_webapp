@@ -2,15 +2,17 @@ class BookingController < ApplicationController
 
   before_action :ensure_logged_in
 
-  @@theaters= Theater.all 
+  # @@theaters= Theater.all 
   @@movie_id=0
     
     def new 
-    @theaters = @@theaters
-    @movie_id = @@movie_id
+    @theaters = Theater.where(id: params[:theater_id])
+    @theater_id = params[:theater_id]
+    @movie_id = params[:movie_id]
     end
-
+    
     def index
+      # debugger
       @user_bookings = Booking.where(user_id: current_user.id).paginate(page: params[:page], per_page: 3)   
     end
 
@@ -25,26 +27,30 @@ class BookingController < ApplicationController
             )
             screen.save!
             redirect_to "/bookings/index"     
-      end
-    end  
-    
+          end
+        end  
+        
     def sorttheater
-      # debugger
       @theaters = Theater.joins("inner join shows on theaters.id = shows.theater_id and movie_id = #{params[:movie_id]}")
-      render "booking/new"
+      @movie_id = params[:movie_id]
+      render "/booking/new"
     end
+   
+    # def view_theater
+    #   # debugger
+    #   @@theater_id= params[:theater_id]
+    #   redirect_to "/booking/#{params[:movie_id]}"
+    # end
 
-    def view_theater
-      # debugger
-      @@theater_id= params[:theater_id]
-      redirect_to "/booking/#{params[:movie_id]}"
-    end
+    # def theater
+    #   @theaters = Theater.where(id: @@theater_id)
+    #   @theater_id = @@theater_id
+    #   render "booking/new"
+    # end
 
-    def theater
-      @theaters = Theater.where(id: @@theater_id)
-      @theater_id = @@theater_id
-      render "booking/new"
-    end
+
+
+    
 
     # def seat_quantity
     # screen = Booking.create!(

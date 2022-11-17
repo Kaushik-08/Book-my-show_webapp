@@ -10,59 +10,33 @@
     <div class="form-group">
       <div class="row">
       <div class="col">
-          <form action="/book" method="post" >
+          <%# <form action="/book" method="post" > %>
+          <%# <% @theater_id%> 
+          <%= form_with(url: '/book', method: 'post') do |form| %>
           <input name="authenticity_token" type="hidden" value=" <%= form_authenticity_token %>">
-          <% movie_id = params[:movie_id] %>
-        <%if (movie_id != nil ) %>
       <select class="form-control" onchange="settheater(event)" name="allot_movie_id"  id="exampleFormControlSelect1">
         <option value= 0 > select-option</option>
-        
         <%Movie.all.each do|allot|%>
-          <option value= <%=allot.id %> <%= movie_id == allot.id.to_s ? " selected " : "" %> ><%=allot.movie_name%></option>
+          <option value= <%=allot.id %> <%= @movie_id.to_i == allot.id ? " selected " : "" %> ><%=allot.movie_name%></option>
         <%end%> 
         </select>
         </div>
-        <div class="col">
+      <div class="col">
     <select class="form-control" name="allot_theater_id" id="exampleFormControlSelect1">
-   
+
       <%@theaters.each do|screen|%>
-          <option value=<%=screen.id %>  <%= @theater_id == screen.id.to_s ? " selected " : "" %>  ><%=screen.theater_name%></option>
+          <option value=<%=screen.id %>  <%= @theater_id.to_i == screen.id ? " selected " : "" %>  ><%=screen.theater_name%></option>
         <%end%>
         </select>
           </div>
     </div>
     </div>
-   
-
-    <%else%>
-     <select class="form-control" onchange="settheater(event)" name="allot_movie_id"  id="exampleFormControlSelect1">
-        <option value= 0 > select-option</option>
-        <%Movie.all.each do|allot|%>
-          <option value= <%=allot.id %>><%=allot.movie_name%></option>
-        <%end%> 
-        </select>
-        </div>
-
-           <div class="col">
-    <select class="form-control" name="allot_theater_id" id="exampleFormControlSelect1">
-   
-      <%@theaters.each do|screen|%>
-          <option value=<%=screen.id %> ><%=screen.theater_name%></option>
-        <%end%>
-        </select>
-          </div>
-    </div>
-    </div>
-        <%end%>
-   
-
-    
 <br>
 <div>
     <label for="ticket">Choose date:</label>
-    <input type="date" name="booking_date" min="2022-11-18" max="2022-11-30" style="width:8%;">
+    <input type="date" name="booking_date" required min="2022-11-16" max="2022-11-30" style="width:8%;">
     <label for="ticket">Quantity:</label>
-                <input type="number" name="seats" class="todo_input" placeholder="Enter Task" min="1" max="120" style="width:6%;"></div><br>
+                <input type="number" name="seats" class="todo_input" placeholder="Enter Task" required min="1" max="120" style="width:6%;"></div><br>
           
 
             <div class="row">
@@ -72,9 +46,10 @@
           <option value= <%=time.id %>><%=time.show_timing%></option>
         <%end%>
         </select> <br>
-        <input type="submit" value="Done" class="btn btn-dark" title="Add Todo" > 
+        <%# <input type="submit" value="Done" class="btn btn-dark" title="Add Todo" >  %>
+        <%= form.submit "Done"%>
           </div>
-          </form>
+    <%end%>
 </div>
 
 <script>

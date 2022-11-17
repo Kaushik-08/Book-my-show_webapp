@@ -63,6 +63,12 @@ class TheatersController < ApplicationController
     end
   end
 
+  def booking_redirect
+    @movie_id = params[:movie_id]
+    @theater_id = params[:theater_id]
+    redirect_to "/booking/new/#{@movie_id}/#{@theater_id}"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_theater

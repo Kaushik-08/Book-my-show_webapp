@@ -40,11 +40,11 @@
    background-color: #aaa6ffa6;
 }
 
-#home-text{
+/* #home-text{
    font-size: 40px;
    margin-top: 200px;
    margin-left: 100px;
-}
+} */
 
 #text-clr{
    color: #9a95fb;
@@ -56,12 +56,12 @@
    margin-top: 30px;
 }
 
-#home-img{
+/* #home-img{
 height: 500px;
 position: absolute;
 margin-left: 880px;
 margin-top: 50px;
-}
+} */
 
 .registration{
    margin-left: 950px;
