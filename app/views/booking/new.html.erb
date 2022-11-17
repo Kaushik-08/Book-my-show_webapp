@@ -1,5 +1,11 @@
 <%= image_tag('booking.webp',alt: "",class:"rounded mx-auto d-block") %>
 
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
 <div class="booking">
     <div class="form-group">
       <div class="row">
@@ -16,6 +22,7 @@
         </div>
       <div class="col">
     <select class="form-control" name="allot_theater_id" id="exampleFormControlSelect1">
+   
       <%@theaters.each do|screen|%>
           <option value=<%=screen.id %>  <%= @theater_id == screen.id.to_s ? " selected " : "" %>  ><%=screen.theater_name%></option>
         <%end%>
@@ -42,7 +49,8 @@
           </div>
           </form>
 
-          
+          <%= flash[:error] %>
+          <%= yield %>
 </div>
 
 <script>
