@@ -1,18 +1,33 @@
 
-<%= image_tag('home-frst-img.png',alt: "",class:"img-fluid", id:"home-img") %>
+<%= image_tag('home-page-img.png',alt: "home-img",class:"img-fluid rounded float-right ",id:"home-img") %>
 
-<div>
-    <div id="home-text"><p id="text-clr">Book Your Tickets</p> 
+<div style="width:40%; margin-left:22%; margin-top: 6%;" >
+    <div id="home-text" class="text-center"><p id="text-clr">Book Your Tickets</p>
     <p>And Enjoy With Your Friends And Family !</p>
     </div>
      <% if @presence == 1%>
-    <button type="button" class="btn btn-danger" id="btn-home"><%= link_to 'Explore', movies_path %></button>
+    <a href="/movies"><button type="button" class="btn btn-dark" id="btn-home">Explore</button></a>
     <% else %>
-    <a href="/users/sign_in"><button type="button" class="btn btn-danger" id="btn-home">Login</button></a>
+    <a href="/users/sign_in"><button type="button" class="btn btn-dark" id="btn-home">Login</button></a>
     <% end %>
-
-
 </div>
 
+<div class="up-cmgimg">
+<%= image_tag('thunivi.webp',alt: "home-img", class:"img-fluid rounded float-left ",style:"width:12%; height:100%;") %>
+<%= image_tag('Varisu_poster.jpeg',alt: "home-img", class:"img-fluid rounded float-left ",style:"width:12%; height:100%;") %>
+<%= image_tag('Jailer_film_poster.jpeg',alt: "home-img", class:"img-fluid rounded float-left ",style:"width:12%; height:100%;") %>
+<%= image_tag('india-2.jpg',alt: "home-img", class:"img-fluid rounded float-left ",style:"width:12%; height:100%;") %>
+<button type="button" class="btn btn-dark" style="margin-top:13%;" ><<<<<< UP COMMING MOVIES</button>
+</div>
 
-
+<div class="card" style="width:100%;">
+  <b><div class="card-header" style="background: linear-gradient(to right, #ffccffe9 0%, #9966ffb6 100%);">
+    We Are Getting Upgrade !
+  </div></b>
+  <div class="card-body">
+    <h5 class="card-title">Our App is Available</h5>
+    <p class="card-text">In Mobile,Ipad,Etc.... Click and download The App And Enjoy ! </p>
+    <a href="https://www.apple.com/in/app-store/"><%= image_tag('app-store-img.png',alt: "home-img", style:"width:8%; height:10%;") %></a>
+    <a href="https://play.google.com/store/apps"><%= image_tag('play-store-img.png',alt: "home-img",style:"width:8%; height:10%;") %></a>
+  </div>
+</div>

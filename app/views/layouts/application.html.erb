@@ -14,19 +14,19 @@
     <nav class="navbar navbar-expand-lg navbar-light " style="">
   <a class="navbar-brand" href="/" ><%= image_tag('logo-img.png',alt: "",id:"logo-icn") %></a>
 
-<ul class="nav justify-content-center">
+<ul class="nav justify-content-center" >
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/movies">Movies</a>
+    <a class="nav-link active" style="color: black;" aria-current="page" href="/movies">Movies</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/theaters">Theaters</a>
+    <a class="nav-link" style="color: black;" href="/theaters">Theaters</a>
   </li>
   <% if current_user %>
       <li class="nav-item">
-        <a class="nav-link" href="/booking/new">Book Ticket</a>
+        <a class="nav-link" style="color: black;" href="/booking/new">Book Ticket</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/bookings/index" tabindex="-1" aria-disabled="true">Ticketes</a>
+        <a class="nav-link" style="color: black;" href="/bookings/index" tabindex="-1" aria-disabled="true">Ticketes</a>
       </li>
   <% end%>
 </ul>
