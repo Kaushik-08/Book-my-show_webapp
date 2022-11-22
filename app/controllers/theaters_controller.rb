@@ -63,6 +63,7 @@ class TheatersController < ApplicationController
     end
   end
 
+  ##Redirecting to booking page
   def booking_redirect
     @movie_id = params[:movie_id]
     @theater_id = params[:theater_id]
