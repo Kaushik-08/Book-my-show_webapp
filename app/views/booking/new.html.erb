@@ -4,8 +4,6 @@
     <div class="form-group">
       <div class="row">
       <div class="col">
-          <%# <form action="/book" method="post" > %>
-          <%# <% @theater_id%> 
           <%= form_with(url: '/book', method: 'post') do |form| %>
           <input name="authenticity_token" type="hidden" value=" <%= form_authenticity_token %>">
       <select class="form-control" onchange="settheater(event)" name="allot_movie_id"  id="exampleFormControlSelect1">
@@ -41,8 +39,7 @@
           <option value= <%=time.id %>><%=time.show_timing%></option>
         <%end%>
         </select> <br>
-        <%# <input type="submit" value="Done" class="btn btn-dark" title="Add Todo" >  %>
-        <%= form.submit "Done"%>
+          <%= form.submit "Book" ,class:"btn-book"%>
           </div>
     <%end%>
 </div>
@@ -52,3 +49,4 @@ function settheater(event) {
   console.log(event.target.value);
   location.href="/booking/new/"+event.target.value
 }</script>
+
