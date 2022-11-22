@@ -19,7 +19,7 @@ class BookingController < ApplicationController
     def book
       booking_seats= Booking.where(movie_id: params[:allot_movie_id], theater_id: params[:allot_theater_id]).pluck(:quantity).inject(0) {|num,x| num + x }
       unless (booking_seats + params[:seats].to_i ) < 120
-        flash.alert = "Your signin attempt was invalid, Please retry."
+        flash.alert = "You are raising above the available tickets.."
         redirect_to request.referer
           else 
             screen = Booking.create!(
