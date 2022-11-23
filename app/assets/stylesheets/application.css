@@ -163,3 +163,9 @@
    height: 270px;
    margin-top: 7.5%;
 }
+
+.notice{
+   margin-left: 8%;
+   font-size: 150%;
+   color: forestgreen;
+}
