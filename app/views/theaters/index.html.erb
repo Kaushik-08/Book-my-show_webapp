@@ -1,26 +1,20 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Theaters</h1>
 
-<table>
+    <table>
+      <tbody>
+        <% @theaters.each do |theater| %>
+          <div class="card">
+            <h5 class="card-header">Theater name:</h5>
+              <div class="card-body">
+                  <h4 class="card-title"><%= theater.theater_name %></h4>
+                  <p class="card-title">Theater location:</p>
+                  <p class="card-text"><%= theater.theater_location %></p>
+                  <button type="button" class="btn btn-outline-dark"><%= link_to 'Book', "/booking/new/0/#{theater.id}" %></button>
+              </div>
+          </div>
+        <% end %>
+      </tbody>
+    </table>
 
-  <tbody>
-    <% @theaters.each do |theater| %>
-<div class="card">
-  <h5 class="card-header">Theater name:</h5>
-  <div class="card-body">
-    <h4 class="card-title"><%= theater.theater_name %></h4>
-    <p class="card-title">Theater location:</p>
-    <p class="card-text"><%= theater.theater_location %></p>
-    <button type="button" class="btn btn-outline-dark"><%= link_to 'Book', "/booking/new/0/#{theater.id}" %></button>
-
-  </div>
-</div>
-    <% end %>
-  </tbody>
-</table>
-
-
-
-<br>
 

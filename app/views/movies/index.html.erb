@@ -2,25 +2,21 @@
 
   <div class="all-movie">
     <% @movies.each do |movie| %>
-    
       <div class="card" style="width: 18rem; margin-left: 5px; margin-top: 1%;" >
-      <% if movie.header_image.attached?%>
-      <%= image_tag movie.header_image,id:"movie-list"%>
-      <% end %>
-  <div class="card-body">
-    <h5 class="card-title"><%= movie.movie_name %></h5>
-    <p class="card-text"><%= movie.movie_format %></p>
-    <p class="card-text"><%= movie.movie_duration %></p>
-    <p class="card-text"><%= movie.movie_language %></p>
-    <p class="card-text"><%= movie.ticket_price %></p>
-    <button type="button" class="btn btn-outline-dark"><%= link_to 'show', movie %></button>
-
+          <% if movie.header_image.attached?%>
+          <%= image_tag movie.header_image,id:"movie-list"%>
+          <% end %>
+      <div class="card-body">
+          <h5 class="card-title"><%= movie.movie_name %></h5>
+          <p class="card-text"><%= movie.movie_format %></p>
+          <p class="card-text"><%= movie.movie_duration %></p>
+          <p class="card-text"><%= movie.movie_language %></p>
+          <p class="card-text"><%= movie.ticket_price %></p>
+          <button type="button" class="btn btn-outline-dark"><%= link_to 'show', movie %></button>
+      </div>
   </div>
-</div>
+    <% end %>
 
-   <% end %>
-
-<br>
 
 <%# 
 <%= link_to 'New Movie', new_movie_path %>

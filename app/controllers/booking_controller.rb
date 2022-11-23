@@ -13,7 +13,6 @@ class BookingController < ApplicationController
     
       ##Bookked movie listing && pagination 
       def index
-        # debugger
         @user_bookings = Booking.where(user_id: current_user.id).paginate(page: params[:page], per_page: 3)   
       end
 

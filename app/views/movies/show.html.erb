@@ -1,27 +1,17 @@
-<% @movie.files.each do |file| %>
-   <%= link_to file.filename, rails_blob_path(file, disposition: :attachment) %>
- <% end %>
-<p id="notice"><%= notice %></p>
-<p>
- <% if @movie.header_image.attached?%>
- <%= image_tag @movie.header_image,id:"movie-img"%>
- <% end %>
-</p>
-<div class="content-of-movies">
-<b><p id="movie-name">
-  <%= @movie.movie_name %>
-</p></b>
-<b><p id="movie-about">
-  <%= @movie.about_movie %>
-</p></b>
-<p>
-  <%= @movie.movie_format %>
-</p>
-<p>
-  <%= @movie.movie_duration %>
-</p>
-<p>
-  <%= @movie.movie_language %>
-</p>
-    <button type="button" class="btn btn-outline-dark"><%= link_to "theaters", "/movies/#{@movie.id}/theaters"%></button>
-</div>
+  <% @movie.files.each do |file| %>
+    <%= link_to file.filename, rails_blob_path(file, disposition: :attachment) %>
+  <% end %>
+      <p id="notice"><%= notice %></p>
+        <p>
+          <% if @movie.header_image.attached?%>
+            <%= image_tag @movie.header_image,id:"movie-img"%>
+          <% end %>
+        </p>
+          <div class="content-of-movies">
+              <b><p id="movie-name"><%= @movie.movie_name %></p></b>
+              <b><p id="movie-about"><%= @movie.about_movie %></p></b>
+              <p><%= @movie.movie_format %></p>
+              <p><%= @movie.movie_duration %></p>
+              <p><%= @movie.movie_language %></p>
+              <button type="button" class="btn btn-outline-dark"><%= link_to "theaters", "/movies/#{@movie.id}/theaters"%></button>
+          </div>
