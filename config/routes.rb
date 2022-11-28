@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   get'/movies/:id/theaters', to: 'theaters#show'
   post '/theatre_booking_redirect/:movie_id/:theater_id', to: "theaters#booking_redirect"
   resources :movies
+
   devise_for :users
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
+  
   get 'home/index'
   root to: "home#index"
 

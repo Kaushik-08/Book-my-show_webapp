@@ -66,4 +66,13 @@
     <p class="alert" id="error-message"><%= alert %></p>
     <%= yield %>
   </body>
+
+  <script>
+    toclick()
+      function toclick(){
+        let popup = document.getElementById("notice-message")
+        setTimeout(function() { popup.innerText="";}, 3000);
+      }
+  </script>
+
 </html>
